@@ -14,7 +14,9 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
-mongoose.connect("mongodb+srv://popescurazvanmihai94:Inuysha1@dating.mwkh0hw.mongodb.net/dating?retryWrites=true&w=majority",
+const dbURL = "mongodb+srv://popescurazvanmihai94:" + process.env.DB_PASSWORD + "@dating.mwkh0hw.mongodb.net/dating?retryWrites=true&w=majority";
+
+mongoose.connect(dbURL,
 { 
     useNewUrlParser: true,
     useUnifiedTopology: true,  
