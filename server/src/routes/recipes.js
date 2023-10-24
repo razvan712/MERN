@@ -14,9 +14,9 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+ 
 
-
-router.post("/", verifyToken, async (req, res) => {
+router.post("/", verifyToken, async (req, res) => { 
     const recipe = new RecipesModel(req.body);
     try {
         const result = await recipe.save();
@@ -66,7 +66,7 @@ router.get("/savedRecipes/:userID", async (req, res) => {
 }
 );
 
+ 
+ 
 
-
-
-export { router as recipesRouter }; 
+export { router as recipesRouter };  
