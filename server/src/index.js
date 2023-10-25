@@ -17,7 +17,7 @@ app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
 const dbURL = `mongodb+srv://popescurazvanmihai94:${process.env.MONGO_PASSWORD}@dating.mwkh0hw.mongodb.net/dating?retryWrites=true&w=majority`;
-
+ 
 
 mongoose.connect(dbURL,
 { 
