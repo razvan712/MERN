@@ -16,6 +16,10 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 const dbURL = `mongodb+srv://popescurazvanmihai94:${process.env.MONGO_PASSWORD}@dating.mwkh0hw.mongodb.net/dating?retryWrites=true&w=majority`;
  
 
