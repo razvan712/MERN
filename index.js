@@ -1,13 +1,13 @@
-import express from "express";
-import cors from "cors";
-import mongoose from "mongoose";
-import dotenv from 'dotenv';
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const  dotenv =  require('dotenv');
 dotenv.config();
 
-import { userRouter } from "./src/routes/users.js";
-import { recipesRouter } from "./src/routes/recipes.js"; 
+const { userRouter } = require("./src/routes/users.js");
+const { recipesRouter } =  require("./src/routes/recipes.js"); 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json()); 

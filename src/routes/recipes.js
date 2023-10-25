@@ -1,8 +1,9 @@
-import express from "express";
-import mongoose from "mongoose";
-import { RecipesModel } from "../models/Recipes.js";
-import { UserModel } from "../models/Users.js";
-import { verifyToken } from "./users.js";
+const express = require("express");
+
+const  { RecipesModel } = require("../models/Recipes.js");
+const  { UserModel } = require("../models/Users.js");
+const { verifyToken } = require("../middleware/verifyToken.js");
+
 
 const router = express.Router();
 
@@ -68,5 +69,4 @@ router.get("/savedRecipes/:userID", async (req, res) => {
 
  
  
-
-export { router as recipesRouter };  
+module.exports = { recipesRouter: router };  
