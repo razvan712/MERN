@@ -7,7 +7,7 @@ dotenv.config();
 import { userRouter } from "./routes/users.js";
 import { recipesRouter } from "./routes/recipes.js"; 
 
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json()); 
@@ -26,4 +26,4 @@ mongoose.connect(dbURL,
   } 
 );   
  
-app.listen(3001, ()=> console.log("Server started at port 3001"));  
+app.listen(PORT, ()=> console.log("Server started at port 3001"));  
