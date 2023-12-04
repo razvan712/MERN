@@ -1,8 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { UserModel } = require("../models/Users.js");
-
+const { UserModel } = require("../models/Users.js"); 
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
@@ -10,7 +9,7 @@ router.post("/register", async (req, res) => {
   const user = await UserModel.findOne({ username });
 
   if (user) {
-    return res.json({ message: "Username already exists" });
+    return res.json({ message: "Username already exists" }); 
   } 
   
   const hashedPassword = await bcrypt.hash(password, 10);
